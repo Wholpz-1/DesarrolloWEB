@@ -17,6 +17,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from Models.Empleado.views import FormularioEmpleadoView
+from Models.Proyectos.views import FormularioProyectoView
+from views.HomeView import HomeView
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path('admin/',  admin.site.urls),
+    path('',HomeView.home,name='home'),
+    path('registrarEmpleado/', FormularioEmpleadoView.index, name='registrarEmpleado'),
+    path('guardarEmpleado/', FormularioEmpleadoView.procesar_formulario, name='guardarEmpleado'),
+    path('listaEmpleado/', FormularioEmpleadoView.listar_empleados, name='listarEmpleado'),
+    path('eliminarEmpleado/<id>', FormularioEmpleadoView.eliminarEmpleado, name='eliminarEmpleado'),
+    path('editarEmpleado/<id>', FormularioEmpleadoView.editarEmpleado, name='editarEmpleado'),
+
+    path('registrarProyecto/', FormularioProyectoView.index, name='registrarProyecto'),
+    path('guardarProyecto/', FormularioProyectoView.procesar_formulario, name='guardarProyecto'),
+    path('listaProyecto/', FormularioProyectoView.listar_proyectos, name='listarProyecto'),
+    path('eliminarProyecto/<id>', FormularioProyectoView.eliminarProyecto, name='eliminarProyecto'),
+    path('editarProyecto/<id>', FormularioProyectoView.editarProyecto, name='editarProyecto'),
+
+
+
+
+
 ]

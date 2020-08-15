@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Listado de Proyectos Registrados</h1>
+
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Lider de Proyecto</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for Proyecto in proyectos %}
+          <tr>
+          <th scope="row">{{ Proyecto.CodigoProyecto}}</th>
+          <td>{{ Proyecto.NombreProyecto }}</td>
+          <td>{{ Proyecto.empleado_CodigoEmpleado }}</td>
+
+                 <td>
+                            <div class="my-2"></div>
+                            <a href="{% url 'editarProyecto' Proyecto.pk %}" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Editar</span>
+                            </a>
+                             </td>
+
+
+                             <td>
+                            <div class="my-2"></div>
+                            <a href="{% url 'eliminarProyecto' Proyecto.pk %}" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Eliminar</span>
+                            </a>
+                             </td>
+
+          </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+
+{% endblock %}
