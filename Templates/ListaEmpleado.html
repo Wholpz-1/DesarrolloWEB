@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Listado de Empleados Registrados</h1>
+
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">DPI</th>
+          <th scope="col">Direccion</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+      {% for Empleado in empleados %}
+          <tr>
+          <th scope="row">{{ Empleado.CodigoEmpleado}}</th>
+          <td>{{ Empleado.Nombre }}</td>
+          <td>{{ Empleado.Apellido }}</td>
+          <td>{{ Empleado.Telefono }}</td>
+          <td>{{ Empleado.DPI }}</td>
+          <td>{{ Empleado.Direccion }}</td>
+                 <td>
+                            <div class="my-2"></div>
+                            <a href="{% url 'editarEmpleado' Empleado.pk %}" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Editar</span>
+                            </a>
+                             </td>
+
+
+                             <td>
+                            <div class="my-2"></div>
+                            <a href="{% url 'eliminarEmpleado' Empleado.pk %}" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Eliminar</span>
+                            </a>
+                             </td>
+
+          </tr>
+      {% endfor %}
+
+      </tbody>
+    </table>
+
+
+{% endblock %}
