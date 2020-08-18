@@ -28,12 +28,14 @@ urlpatterns = [
     path('listaEmpleado/', FormularioEmpleadoView.listar_empleados, name='listarEmpleado'),
     path('eliminarEmpleado/<id>', FormularioEmpleadoView.eliminarEmpleado, name='eliminarEmpleado'),
     path('editarEmpleado/<id>', FormularioEmpleadoView.editarEmpleado, name='editarEmpleado'),
+    path('reporte_excel_proyecto/', FormularioEmpleadoView.ReporteExcelEmpleado, name='reporte_excel_proyecto'),
 
     path('registrarProyecto/', FormularioProyectoView.index, name='registrarProyecto'),
     path('guardarProyecto/', FormularioProyectoView.procesar_formulario, name='guardarProyecto'),
     path('listaProyecto/', FormularioProyectoView.listar_proyectos, name='listarProyecto'),
     path('eliminarProyecto/<id>', FormularioProyectoView.eliminarProyecto, name='eliminarProyecto'),
     path('editarProyecto/<id>', FormularioProyectoView.editarProyecto, name='editarProyecto'),
+
 
 
 

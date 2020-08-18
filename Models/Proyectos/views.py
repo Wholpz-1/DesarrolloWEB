@@ -1,11 +1,14 @@
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
+
 from Models.Proyectos.forms import FormularioProyecto
 from Models.Proyectos.models import Proyecto
 
 
+
 class FormularioProyectoView(HttpRequest):
+
     def index(request):
         proyecto = FormularioProyecto()
         return render(request, "ProyectoIndex.html", {"form":proyecto})
@@ -39,3 +42,6 @@ class FormularioProyectoView(HttpRequest):
                 data['form']=formulario
 
         return render(request, 'modificarProyecto.html', data)
+
+
+
