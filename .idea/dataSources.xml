@@ -12,5 +12,13 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="4ba64b16-6366-4f47-9ac5-706886f0c5f6">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/DesswebGrupo4/settings.py</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\eduar\PycharmProjects\DesswebGrupo4\db.sqlite3</jdbc-url>
+    </data-source>
   </component>
 </project>
