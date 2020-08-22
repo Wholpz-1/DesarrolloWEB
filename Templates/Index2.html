@@ -1,0 +1,117 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Blog Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog/blog.css'%}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="text-muted" href="#"></a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="{% url 'home' %}">APPWEB</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+
+        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">Sign Out</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 text-muted" href=" {% url 'registrarEmpleado' %}">Registrar Empleado</a>
+      <a class="p-2 text-muted" href=" {% url 'listarEmpleado' %} ">Lista de Empleados</a>
+      <a class="p-2 text-muted" href="{% url 'registrarProyect' %} ">Registrar Proyecto</a>
+      <a class="p-2 text-muted" href=" {% url 'listarProyecto' %} ">Lista de Proyectos</a>
+      <a class="p-2 text-muted" href="{% url 'registrarTipoPro' %} ">Registrar Tipo de Proyecto</a>
+      <a class="p-2 text-muted" href="{% url 'listarTipoPro' %} ">Lista de Tipos</a>
+      <a class="p-2 text-muted" href="{% url 'registrarCliente' %}">Clientes</a>
+      <a class="p-2 text-muted" href="{% url 'listarCliente' %}">Lista de Clientes</a>
+    </nav>
+  </div>
+
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic"></h1>
+      <p class="lead my-3"></p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold"></a></p>
+    </div>
+  </div>
+{% block content %}
+
+{% endblock %}
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+      </h3>
+
+      <div class="blog-post">
+        <h2 class="blog-post-title"></h2>
+        <p class="blog-post-meta"> <a href="#"></a></p>
+
+
+      <div class="blog-post">
+        <h2 class="blog-post-title"></h2>
+        <p class="blog-post-meta"><a href="#"></a></p>
+
+
+
+      <div class="blog-post">
+        <h2 class="blog-post-title"></h2>
+        <p class="blog-post-meta"><a href="#"></a></p>
+
+
+
+
+
+    </div><!-- /.blog-main -->
+
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+
+
+</footer>
+</body>
+</html>

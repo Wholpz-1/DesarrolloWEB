@@ -1,13 +1,15 @@
 {% extends 'Index2.html' %}
 
 {% block content %}
-    <h1>Listado </h1>
+    <h1>Listado de Clientes Registrados</h1>
 
     <table class="table table-light">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Tipos de Proyecto</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Telefono</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
 
@@ -16,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-      {% for TipoProyecto in Tipos %}
+      {% for Cliente in clientes %}
           <tr>
-          <th scope="row">{{ TipoProyecto.CodigoTipoPro}}</th>
-          <td>{{ TipoProyecto.Descripcion }}</td>
-
-
+          <th scope="row">{{ Cliente.CodigoCliente}}</th>
+          <td>{{ Cliente.NombreCliente }}</td>
+          <td>{{ Cliente.Direccion }}</td>
+          <td>{{ Cliente.Telefono }}</td>
                  <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'editarTipoPro' TipoProyecto.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'editarCliente' Cliente.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
@@ -35,7 +37,7 @@
 
                              <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'eliminarTipoPro' TipoProyecto.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'eliminarCliente' Cliente.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
@@ -48,6 +50,15 @@
 
       </tbody>
     </table>
+       <div class="my-2"></div>
+                            <a href="{% url 'ReportPDF' %}" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                <i class="fas fa-trash"></i>
+                                </span>
+                                <span class="text">Exportar a PDF</span>
+                            </a>
+                             </td>
+
 
 
 {% endblock %}

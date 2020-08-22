@@ -12,11 +12,11 @@
     <h1> Formulario de Registro </h1>
 
 
-    <form  method="POST">
+    <form action="{% url 'guardarCliente' %}" method="post">
     {% csrf_token %}
     {% if mensaje %}
         <div class="alert alert-success" role="alert">
-          El Proyecto Se Edito Exitosamente!
+          El Cliente Se Registro Exitosamente!
         </div>
     {% endif %}
     {{ form|crispy }}

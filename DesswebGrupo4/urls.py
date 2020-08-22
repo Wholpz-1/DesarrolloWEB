@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, logout_then_login
 
+from Models.Cliente.views import FormularioClienteView
 from Models.Empleado.views import FormularioEmpleadoView
 from Models.Proyecto.views import FormularioProyectoView
 from Models.TipoProyecto.views import FormularioTipoProView
@@ -27,7 +28,10 @@ urlpatterns = [
     path('admin/',  admin.site.urls),
 
     path('', LoginView.as_view(template_name='Login.html'), name="login"),
+    path('logout/',logout_then_login, name ="logout"),
     path('inicio/', HomeView.home, name='home'),
+path('', LoginView.as_view(template_name='Login.html'), name="login"),
+    path('accounts/login/', LoginView.as_view(template_name='Login.html'), name="login"),
 
 
     path('registrarEmpleado/', FormularioEmpleadoView.index, name='registrarEmpleado'),
@@ -35,7 +39,7 @@ urlpatterns = [
     path('listaEmpleado/', FormularioEmpleadoView.listar_empleados, name='listarEmpleado'),
     path('eliminarEmpleado/<id>', FormularioEmpleadoView.eliminarEmpleado, name='eliminarEmpleado'),
     path('editarEmpleado/<id>', FormularioEmpleadoView.editarEmpleado, name='editarEmpleado'),
-    path('reporte_excel_proyecto/', FormularioEmpleadoView.ReporteExcelEmpleado, name='reporte_excel_proyecto'),
+    path('reporte_excel_proyecto/', FormularioEmpleadoView.Reportpdf, name='reporte_excel_proyecto'),
 
     path('registrarProyect/', FormularioProyectoView.index, name='registrarProyect'),
     path('guardarProyecto/', FormularioProyectoView.procesar_formulario, name='guardarProyecto'),
@@ -50,5 +54,12 @@ urlpatterns = [
     path('listaTipoPro/', FormularioTipoProView.listar_TipoPro, name='listarTipoPro'),
     path('eliminarTipoPro/<id>', FormularioTipoProView.eliminarTiposPro, name='eliminarTipoPro'),
     path('editarTipoPro/<id>', FormularioTipoProView.editarTiposPro, name='editarTipoPro'),
+
+    path('registrarCliente/', FormularioClienteView.index, name='registrarCliente'),
+    path('guardarCliente/', FormularioClienteView.procesar_formulario, name='guardarCliente'),
+    path('listaCliente/', FormularioClienteView.listar_Cliente, name='listarCliente'),
+    path('eliminarCliente/<id>', FormularioClienteView.eliminarCliente, name='eliminarCliente'),
+    path('editarCliente/<id>', FormularioClienteView.editarCliente, name='editarCliente'),
+    path('ReportPDF/', FormularioClienteView.ReportPDF, name='ReportPDF'),
 
 ]
