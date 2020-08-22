@@ -73,3 +73,6 @@ class FormularioEmpleadoView(HttpRequest):
         response['Content-Disposition'] = content
         wb.save(response)
         return response
+
+
+
