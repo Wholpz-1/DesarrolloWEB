@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Models.Empleado',
     'Models.TipoProyecto',
-    'Models.Proyecto',
+    'Models.proyect',
+    'Models.RecursosPro',
+    'Models.Cliente',
     'crispy_forms',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -121,6 +123,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
                     '/PycharmProjects/DesswebGrupo4/Static',

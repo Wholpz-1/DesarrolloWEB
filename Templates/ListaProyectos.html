@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'Index2.html' %}
 
 {% block content %}
     <h1>Listado de Proyectos Registrados</h1>
@@ -12,10 +12,7 @@
           <th scope="col">Nombre</th>
           <th scope="col">Lider de Proyecto</th>
           <th scope="col">Tipo de Proyecto</th>
-          <th scope="col">Cantidad de Personal</th>
-          <th scope="col">Presupuesto</th>
-          <th scope="col">Equipo Requerido</th>
-          <th scope="col">Servicios Extras</th>
+          <th scope="col">Cliente</th>
           <th scope="col">Fehca de Inicio</th>
           <th scope="col">Fehca de Entrega</th>
           <th scope="col">Editar</th>
@@ -26,21 +23,18 @@
         </tr>
       </thead>
       <tbody>
-      {% for Proyecto in proyectos %}
+      {% for proyect in proyectos %}
           <tr>
-          <th scope="row">{{ Proyecto.CodigoProyecto}}</th>
-          <td>{{ Proyecto.NombreProyecto}}</td>
-          <td>{{ Proyecto.empleado_CodigoEmpleado}}</td>
-          <td>{{ Proyecto.tipopro_CodigoTipoPro}}</td>
-          <td>{{ Proyecto.Personal}}</td>
-          <td>{{ Proyecto.Presupuesto}}</td>
-          <td>{{ Proyecto.Maquinas}}</td>
-          <td>{{ Proyecto.ContracionServicios }}</td>
-          <td>{{ Proyecto.FechaInicio}}</td>
-          <td>{{ Proyecto.FechaEntrega }}</td>
+          <th scope="row">{{ proyect.CodigoProyecto}}</th>
+          <td>{{ proyect.NombreProyecto}}</td>
+          <td>{{ proyect.empleado_CodigoEmpleado}}</td>
+          <td>{{ proyect.tipopro_CodigoTipoPro}}</td>
+          <td>{{ proyect.cliente_CodigoCliente}}</td>
+          <td>{{ proyect.FechaInicio}}</td>
+          <td>{{ proyect.FechaEntrega }}</td>
           <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'editarProyecto' Proyecto.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'editarProyecto' proyect.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
@@ -49,7 +43,7 @@
                              </td>
           <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'eliminarProyecto' Proyecto.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'eliminarProyecto' proyect.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
