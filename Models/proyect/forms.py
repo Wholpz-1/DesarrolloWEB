@@ -1,21 +1,18 @@
 from django.forms import ModelForm
 from django.forms import DateInput
 
-from Models.Proyecto.models import Proyecto
+from Models.proyect.models import proyect
 
 
-class FormularioProyect(ModelForm):
+class FormularioProyecto(ModelForm):
     class Meta:
-        model = Proyecto
+        model = proyect
         fields = [
 
             'NombreProyecto',
             'empleado_CodigoEmpleado',
             'tipopro_CodigoTipoPro',
-            'Personal',
-            'Presupuesto',
-            'Maquinas',
-            'ContracionServicios',
+            'cliente_CodigoCliente',
             'FechaInicio',
             'FechaEntrega',
 
@@ -26,10 +23,9 @@ class FormularioProyect(ModelForm):
 
             'empleado_CodigoEmpleado': 'Nombre del Lider de Proyecto',
             'tipopro_CodigoTipoPro': 'Tipo de Proyecto',
-            'ContracionServicios' : 'Contratacion de Servicios',
+            'cliente_CodigoCliente' : 'Cliente',
             'FechaInicio' :  'Fecha de Inicio ',
             'FechaEntrega': 'Fecha de Entrega',
-            'Maquinas' : 'Equipo a Utilizar',
         }
 
         widgets = {'FechaEntrega': DateInput(attrs={'type': 'date'}),'FechaInicio': DateInput(attrs={'type':'date'})}

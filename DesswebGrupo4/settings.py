@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Models.Empleado',
     'Models.TipoProyecto',
-    'Models.Proyecto',
+    'Models.proyect',
+    'Models.RecursosPro',
     'Models.Cliente',
     'crispy_forms',
 ]

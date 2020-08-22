@@ -1,49 +1,46 @@
 {% extends 'Index2.html' %}
 
 {% block content %}
-    <h1>Listado de Proyectos Registrados</h1>
-
-
+    <h1>Listado de Recursos Por Proyecto</h1>
 
     <table class="table table-light">
       <thead>
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Lider de Proyecto</th>
-          <th scope="col">Tipo de Proyecto</th>
-          <th scope="col">Cliente</th>
-          <th scope="col">Fehca de Inicio</th>
-          <th scope="col">Fehca de Entrega</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Eliminar</th>
+          <th scope="col">Personal</th>
+          <th scope="col">Presupuesto</th>
+          <th scope="col">Servicios Extra</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
 
 
 
         </tr>
       </thead>
       <tbody>
-      {% for proyect in proyectos %}
+      {% for Recurso in lb_recursos %}
           <tr>
-          <th scope="row">{{ proyect.CodigoProyecto}}</th>
-          <td>{{ proyect.NombreProyecto}}</td>
-          <td>{{ proyect.empleado_CodigoEmpleado}}</td>
-          <td>{{ proyect.tipopro_CodigoTipoPro}}</td>
-          <td>{{ proyect.cliente_CodigoCliente}}</td>
-          <td>{{ proyect.FechaInicio}}</td>
-          <td>{{ proyect.FechaEntrega }}</td>
-          <td>
+          <th scope="row">{{ Recurso.CodigoRecursos}}</th>
+          <td>{{ Recurso.proyecto_CodigoProyecto }}</td>
+          <td>{{ Recurso.Personal }}</td>
+          <td>{{ Recurso.Presupuesto }}</td>
+          <td>{{ Recurso.ContracionServicios  }}</td>
+
+            <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'editarProyecto' proyect.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'editarRecursos' Recurso.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
                                 <span class="text">Editar</span>
                             </a>
                              </td>
-          <td>
+
+
+                             <td>
                             <div class="my-2"></div>
-                            <a href="{% url 'eliminarProyecto' proyect.pk %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'eliminarRecursos' Recurso.pk %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
@@ -51,22 +48,20 @@
                             </a>
                              </td>
 
-
-
-
           </tr>
       {% endfor %}
 
       </tbody>
     </table>
        <div class="my-2"></div>
-                            <a href="{% url 'reportPDF' %}" class="btn btn-danger btn-icon-split">
+                            <a href="{% url 'ReportPDF' %}" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-trash"></i>
                                 </span>
                                 <span class="text">Exportar a PDF</span>
                             </a>
                              </td>
+
 
 
 {% endblock %}

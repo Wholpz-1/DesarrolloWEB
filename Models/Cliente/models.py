@@ -1,8 +1,6 @@
 
 from django.db import models
 
-from Models.Proyecto.models import Proyecto
-
 
 
 class Cliente(models.Model):
@@ -11,3 +9,5 @@ class Cliente(models.Model):
     Direccion = models.CharField(max_length=75)
     Telefono = models.CharField(max_length=12)
 
+    def __str__(self):
+        return '{}'.format(self.NombreCliente)
